@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Providers/AuthProvider';
 
 const Header = () => {
+    const {user, logOut} = useContext(AuthContext);
+    const handleLogOut =()=>{
+        logOut()
+        .then(result=>{})
+        .catch(error=>console.log(error))
+
+    }
     return (
         <div className=' h-24 container mx-auto px-24'>
             <div className='flex justify-between p-5'>
@@ -14,6 +22,7 @@ const Header = () => {
                     <Link to='/blog'>Blog</Link>
                     <Link to='/contact'>Contact</Link>
                     <Link to='/login'>Login</Link>
+                    {user && <span className='text-white'>{user.email} <button onClick={handleLogOut}>LogOut</button></span>}
                 </div>
             </div>
         </div>
