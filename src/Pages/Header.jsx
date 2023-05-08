@@ -22,7 +22,7 @@ const Header = () => {
                     <Link to='/blog'>Blog</Link>
                     <Link to='/contact'>Contact</Link>
                     <Link to='/login'>Login</Link>
-                    {user && <span className='text-white'>{user.email} <button onClick={handleLogOut}>LogOut</button></span>}
+                    {user ? <button className="btn btn-outline" onClick={handleLogOut}>LogOut</button> : <button className='btn btn-outline'>Login</button>}
                 </div>
             </div>
         </div>
