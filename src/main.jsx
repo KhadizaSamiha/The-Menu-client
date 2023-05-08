@@ -11,6 +11,7 @@ import Home from './Pages/Home';
 import Blog from './Pages/Blog';
 import Contact from './Pages/Contact';
 import Recipes from './Pages/Recipes';
+import Login from './Pages/Login';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path:'/contact',
         element:<Contact></Contact>
+      },
+      {
+        path:'/login',
+        element:<Login></Login>
       },
       {
         path:'/chef/:id',
