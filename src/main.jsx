@@ -15,11 +15,13 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 import AuthProvider from './Providers/AuthProvider';
 import PrivateRoutes from './Routes/PrivateRoutes';
+import Error from './Pages/Error';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <Error></Error>,
     children:[
       {
         path:'/',
