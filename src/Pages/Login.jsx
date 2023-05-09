@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider, getAuth,signInWithPopup } from "firebase/auth";
 import app from '../Firebase/firebase.config';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Login = () => {
     const auth = getAuth(app);
@@ -81,8 +82,8 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-warning">Login</button>
                             </div>
-                            <button onClick={handleGoogleSignIn} className='btn btn-outline btn-block btn-warning text-yellow-500'>Continue With Google</button>
-                            <button onClick={handleGithubSignIn} className='btn btn-outline btn-block btn-warning text-yellow-500'>Continue With Github</button>
+                            <button onClick={handleGoogleSignIn} className='btn btn-outline btn-block btn-warning text-yellow-500'> <span className='pe-2'><FaGoogle /></span>Continue With Google</button>
+                            <button onClick={handleGithubSignIn} className='btn btn-outline btn-block btn-warning text-yellow-500'> <span className='pe-2'><FaGithub /></span>Continue With Github</button>
                         </form>
                     </div>
                 </div>

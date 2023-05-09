@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 import { getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import app from '../Firebase/firebase.config';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Register = () => {
     const [error, setError] = useState('');
@@ -102,8 +103,8 @@ const Register = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-warning mb-2" >Register</button>
                             </div>
-                            <button onClick={handleRegisterWithGoogle} className='btn btn-outline btn-block btn-warning text-yellow-500 mb-2' >Continue With Google</button>
-                            <button  onClick={handleRegisterWithGithub} className='btn btn-outline btn-block btn-warning text-yellow-500 mb-2'>Continue With Github</button>
+                            <button onClick={handleRegisterWithGoogle} className='btn btn-outline btn-block btn-warning text-yellow-500 mb-2' > <span className='pe-2'><FaGoogle /></span>Continue With Google</button>
+                            <button  onClick={handleRegisterWithGithub} className='btn btn-outline btn-block btn-warning text-yellow-500 mb-2'> <span className='pe-2'><FaGithub /></span>Continue With Github</button>
                         </form>
                     </div>
                 </div>
